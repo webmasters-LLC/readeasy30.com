@@ -1,41 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReadEasy30 240-Day Preview App</title>
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="stylesheet" href="css/style.css?v=c8b0a7f0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReadEasy30 App | Daily Reading Interface</title>
+  <meta name="description" content="ReadEasy30 — a free 240-day reading curriculum with Bubbles, your AI literacy coach. 30 minutes a day.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫧</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css?v=amber1">
 </head>
-<body>
-  <main class="lesson-page">
-    <section class="lesson-card">
-      <p class="eyebrow">Preview App</p>
-      <h1>ReadEasy30 Days 31-240 Preview</h1>
-      <p id="previewStatus">Loading staged lessons...</p>
-      <nav class="top-links" aria-label="Preview navigation">
-        <a href="index.html">Home</a>
-        <a href="app.html">Current App</a>
-        <a href="lesson-test-240.html">Internal Test</a>
-        <a href="days-1-240-curriculum.html">Curriculum</a>
-      </nav>
-      <section class="story-box">
-        <label for="previewDaySelect">Choose a staged day</label>
-        <select id="previewDaySelect"></select>
-      </section>
-      <section id="previewLesson" class="story-box"></section>
+<body class="min-h-screen bg-amber-50/30 font-sans antialiased text-stone-800 flex flex-col">
+  <a href="#lessonArea" class="skip-link">Skip to lesson</a>
+  <header class="max-w-5xl mx-auto w-full px-4 sm:px-0">
+    <nav aria-label="Main navigation" class="bg-white rounded-3xl p-4 sm:p-6 shadow-sm border border-amber-100/70 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <a href="index.html" class="flex items-center gap-4 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">
+        <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shadow-inner animate-bounce motion-reduce:animate-none" aria-hidden="true">🫧</div>
+        <div>
+          <span class="text-2xl font-black text-stone-950 tracking-tight">ReadEasy30</span>
+          <span class="block text-xs font-semibold uppercase tracking-wider text-amber-600">Bubbles AI Literacy Guide</span>
+        </div>
+      </a>
+      <div class="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
+        <a href="index.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-amber-50 hover:text-stone-900">Home</a>
+        <a href="free-reading-and-math-practice.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-amber-50 hover:text-stone-900">Free Practice</a>
+        <a href="about.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-amber-50 hover:text-stone-900">About</a>
+        <a href="contact.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:bg-amber-50 hover:text-stone-900">Contact</a>
+        <span id="timerCount" class="ml-1 sm:ml-2 px-4 py-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-bold shadow-sm">Time: 0:00</span>
+      </div>
+    </nav>
+  </header>
+  <main id="lessonArea" class="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-0 py-6 md:py-10">
+    <section id="assessmentIntro" class="bg-white rounded-3xl p-6 sm:p-8 border border-amber-100/70 shadow-sm mb-6">
+      <h2 class="text-2xl font-black text-stone-950 tracking-tight mb-2">Placement Check</h2>
+      <p class="text-stone-600 leading-relaxed mb-4">Not sure where to start? Take a short placement check and Bubbles will suggest the best level for you.</p>
+      <button type="button" class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl shadow-sm transition-all active:scale-95" onclick="startPlacementTest()">Start Placement Check</button>
+    </section>
+    <section id="assessmentTest" class="hidden bg-white rounded-3xl p-6 sm:p-8 border border-amber-100/70 shadow-sm mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span id="assessmentStepLabel" class="bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Step 1 of 8</span>
+        <button type="button" class="text-sm font-bold text-amber-700 hover:text-amber-800 hover:underline" onclick="readPlacementStory()">🔊 Read Story</button>
+      </div>
+      <h3 id="assessmentStoryTitle" class="text-xl font-black text-stone-950 mb-3">Placement Reading</h3>
+      <p id="assessmentStoryText" class="text-stone-700 leading-relaxed mb-6 bg-amber-50/50 p-4 rounded-xl border border-amber-100"></p>
+      <div id="assessmentQuestions" class="space-y-4"></div>
+      <button type="button" class="mt-6 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl shadow-sm transition-all active:scale-95" onclick="checkPlacementAnswers()">Check Answers →</button>
+    </section>
+    <section id="assessmentResult" class="hidden bg-white rounded-3xl p-6 sm:p-8 border border-amber-100/70 shadow-sm mb-6"></section>
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-amber-100/70 shadow-md flex flex-col justify-between min-h-[400px]">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span id="storyLevel" class="bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Level A</span>
+            <select id="daySelect" class="text-sm font-semibold text-stone-700 border border-stone-200 rounded-xl px-3 py-2 bg-white cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-600"></select>
+          </div>
+          <h2 id="storyTitle" class="text-2xl md:text-3xl font-black text-stone-950 tracking-tight">Loading...</h2>
+          <div class="bg-amber-50/50 border-l-4 border-amber-500 p-4 rounded-r-xl">
+            <p class="text-xs md:text-sm font-semibold text-amber-900">
+              <strong>Daily Goal:</strong> Tap any word to hear Bubbles read it aloud. Read slowly and look for proof.
+            </p>
+          </div>
+          <div id="storyText" class="kids-reading-text text-stone-800 font-medium tracking-normal leading-relaxed select-text selection:bg-amber-100 selection:text-amber-900"></div>
+          <div class="mt-4">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-stone-400 mb-2">Vocabulary — tap to hear</h4>
+            <div id="vocabList" class="flex flex-wrap gap-2"></div>
+          </div>
+          <div id="questions" class="mt-4 space-y-4"></div>
+          <p id="resultMessage" class="text-sm font-bold text-stone-700 mt-2"></p>
+          <div id="completeCard" class="hidden mt-4 bg-amber-50 border border-amber-200 rounded-2xl p-4 text-center">
+            <p id="completeMessage" class="font-bold text-amber-900"></p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-stone-100">
+          <button type="button" class="px-4 py-3 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold rounded-xl text-sm transition-all active:scale-95" onclick="prevLesson()">← Back</button>
+          <button type="button" class="px-4 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl text-sm shadow-sm transition-all active:scale-95" onclick="checkAnswers()">Check ✨</button>
+          <button type="button" class="px-4 py-3 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold rounded-xl text-sm transition-all active:scale-95" onclick="clearAnswers()">Clear</button>
+          <button type="button" class="px-4 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl text-sm shadow-sm transition-all active:scale-95" onclick="nextLesson()">Next →</button>
+        </div>
+        <div class="flex justify-center gap-4 mt-4">
+          <button type="button" class="text-sm font-bold text-amber-700 hover:text-amber-800 hover:underline" onclick="readStory()">🔊 Read Full Story</button>
+          <button type="button" class="text-sm font-bold text-stone-400 hover:text-stone-600 hover:underline" onclick="resetProgress()">Reset Progress</button>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <div class="bg-gradient-to-br from-amber-100/50 to-orange-50 rounded-3xl p-6 border border-amber-200/40 shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 bg-gradient-to-tr from-amber-400 to-amber-600 text-white rounded-full flex items-center justify-center shadow-md text-2xl" aria-hidden="true">🫧</div>
+            <div>
+              <h3 class="font-black text-stone-900 text-lg">Coach Bubbles</h3>
+              <span class="text-xs font-semibold uppercase tracking-wider text-amber-600">Voice Coach Active</span>
+            </div>
+          </div>
+          <p id="coachMessage" class="text-stone-700 text-sm leading-relaxed font-medium bg-white/60 rounded-xl p-3 border border-amber-100">
+            Ready to help you speak and learn! Tap any word to hear it.
+          </p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 border border-amber-100/70 shadow-sm space-y-4">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-stone-400">Your Progress</h4>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-sm font-semibold">
+              <span id="lessonCount" class="text-stone-700">Lesson 1 of 240</span>
+            </div>
+            <div class="flex justify-between items-center text-sm font-semibold">
+              <span id="completedCount" class="text-amber-700">Completed: 0</span>
+              <span id="streakCount" class="text-stone-600">Streak: 0</span>
+            </div>
+            <div class="w-full bg-stone-100 rounded-full h-3 overflow-hidden">
+              <div id="progressBar" class="bg-gradient-to-r from-amber-400 to-amber-600 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+            <p id="progressText" class="text-xs font-bold text-stone-400 text-center">0%</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-6 border border-amber-100/70 shadow-sm space-y-2">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-stone-400">Current Level</h4>
+          <p id="levelTitle" class="text-lg font-black text-stone-950">Level A</p>
+          <p id="levelDescription" class="text-sm text-stone-600 leading-relaxed"></p>
+        </div>
+      </div>
     </section>
   </main>
-
-  <script src="level-a-lessons.js?v=bdf10d49"></script>
-  <script src="level-b-lessons.js?v=0adb11d1"></script>
-  <script src="level-c-lessons.js?v=45d59fc2"></script>
-  <script src="level-d-lessons.js?v=439a1328"></script>
-  <script src="level-e-lessons.js?v=5d55bf81"></script>
-  <script src="level-f-lessons.js?v=a53feed6"></script>
-  <script src="level-g-lessons.js?v=5331ddf5"></script>
-  <script src="level-h-lessons.js?v=9245e9da"></script>
-  <script src="lesson-loader-240.js?v=898ecedc"></script>
-  <script src="app-240.js?v=6e70d705"></script>
+  <footer class="bg-white border-t border-amber-100/70 px-6 py-4 text-center text-[10px] text-stone-400 font-medium">
+    <p>ReadEasy30 — 100% Free Reading Academy. No sign-up required.</p>
+  </footer>
+  <script src="student-profiles.js?v=bdc01863"></script>
+  <script src="app.js?v=amber1"></script>
 </body>
 </html>
