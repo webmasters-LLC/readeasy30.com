@@ -1,118 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reading Comprehension Practice | ReadEasy30</title>
-<meta name="description" content="Free reading comprehension practice for children. Understand passages, find proof, and answer simple questions.">
-<link rel="stylesheet" href="/css/style.css?v=95e4c7fe">
-<style>
-:root{--primary:#0d7377;--primary-light:#4ecdc4;--dark:#0a1929;--text:#e0e0e0;--text-muted:#8899aa;--card-bg:rgba(255,255,255,.05);--card-border:rgba(255,255,255,.1);--radius:16px;--bg:#0a1929}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-a{color:var(--primary-light);text-decoration:none}a:hover{text-decoration:underline}
-nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,25,41,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--card-border);padding:.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
-nav .logo{font-size:1.3rem;font-weight:700;color:var(--primary-light)}
-nav .links{display:flex;gap:1.2rem;flex-wrap:wrap}nav .links a{color:var(--text-muted);font-size:.9rem;transition:color .3s}nav .links a:hover{color:var(--primary-light);text-decoration:none}
-@media(max-width:768px){nav .links{display:none}}
-.hero{text-align:center;padding:8rem 2rem 4rem;background:linear-gradient(135deg,#0a1929 0%,#1a3a5c 50%,#0d7377 100%)}
-.hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;background:linear-gradient(90deg,#4ecdc4,#44a08d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:clamp(1rem,2vw,1.3rem);max-width:600px;margin:0 auto;color:#b8d4e3}
-section.content{padding:3rem 2rem;max-width:800px;margin:0 auto}
-.content h2{color:var(--primary-light);font-size:1.6rem;margin-bottom:1rem}
-.content h3{color:var(--primary-light);font-size:1.15rem;margin-bottom:.5rem;margin-top:1.5rem}
-.content p{color:var(--text);margin-bottom:1rem}
-.content ul,.content ol{margin-bottom:1.5rem;padding-left:1.5rem}
-.content li{color:var(--text-muted);margin-bottom:.5rem}
-.content strong{color:var(--primary-light)}
-.passage{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:2rem;margin:1.5rem 0}
-.passage h3{color:var(--primary-light);margin-bottom:1rem;font-size:1.2rem}
-.passage p{color:var(--text)}
-.cta-section{text-align:center;padding:3rem 2rem;max-width:800px;margin:0 auto}
-.cta-section h2{color:var(--primary-light);margin-bottom:1rem}
-.cta-section p{color:var(--text-muted);margin-bottom:1.5rem}
-.cta{display:inline-block;padding:.8rem 2rem;background:linear-gradient(90deg,#4ecdc4,#44a08d);color:var(--dark);font-weight:700;border-radius:12px;text-decoration:none;margin:.5rem;transition:transform .3s,box-shadow .3s}
-.cta:hover{transform:scale(1.05);box-shadow:0 10px 30px rgba(78,205,196,.4);text-decoration:none}
-.cta-secondary{display:inline-block;padding:.8rem 2rem;background:var(--card-bg);border:1px solid var(--card-border);color:var(--primary-light);font-weight:700;border-radius:12px;text-decoration:none;margin:.5rem;transition:transform .3s}
-.cta-secondary:hover{transform:scale(1.05);text-decoration:none}
-footer{text-align:center;padding:3rem 2rem;color:var(--text-muted);font-size:.85rem;border-top:1px solid var(--card-border)}
-footer a{color:var(--primary-light)}
-.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-bottom:1rem}
-.footer-links a{color:var(--text-muted);font-size:.85rem}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Comprehension Practice — ReadEasy30</title>
+  <meta name="description" content="Free reading comprehension practice for children. Understand passages, find proof, and answer simple questions.">
+  <link rel="canonical" href="https://readeasy30.com/esl-reading-comprehension.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫧</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css?v=20260920">
+  <link rel="stylesheet" href="/css/mobile-fixes.css?v=20260920">
 </head>
-<body>
-<nav>
-  <a href="/" class="logo">🫧 ReadEasy30</a>
-  <div class="links">
-    <a href="/">Home</a>
-    <a href="/app.html">Lesson App</a>
-    <a href="/daily-reading-practice.html">Daily Practice</a>
-    <a href="/calm-reading-practice.html">Calm Reading</a>
-    <a href="/reading-comprehension-practice.html">Comprehension</a>
-    <a href="/reading-levels-beginner-to-8th-grade.html">Reading Levels</a>
-    <a href="/printable-reading-worksheets.html">Worksheets</a>
-    <a href="/parent-tutor-guide.html">Parent / Tutor Guide</a>
-  </div>
-</nav>
+<body class="min-h-screen bg-amber-50/30 p-4 sm:p-8 font-sans antialiased text-stone-800">
 
-<main>
-  <section class="hero">
-    <h1>Reading Comprehension Practice</h1>
-    <p>Understand the passage before answering. Reread, learn useful words, and find proof in the text.</p>
-  </section>
+  <header class="max-w-5xl mx-auto">
+    <nav aria-label="Main navigation" class="bg-white rounded-3xl p-4 sm:p-6 shadow-sm border border-amber-100/70 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-amber-100 rounded-2xl flex items-center justify-center text-xl">🫧</div>
+        <span class="text-xl font-black text-stone-950">ReadEasy30</span>
+      </a>
+      <div class="flex flex-wrap gap-2 text-sm font-semibold">
+        <a href="/" class="px-3 py-2 rounded-xl text-stone-700 hover:bg-amber-50">Home</a>
+        <a href="/app-240.html" class="px-3 py-2 rounded-xl text-stone-700 hover:bg-amber-50">Lesson App</a>
+        <a href="/daily-reading-practice.html" class="px-3 py-2 rounded-xl text-stone-700 hover:bg-amber-50">Daily Practice</a>
+        <a href="/calm-reading-practice.html" class="px-3 py-2 rounded-xl text-stone-700 hover:bg-amber-50">Calm Reading</a>
+        <a href="/printable-reading-worksheets.html" class="px-3 py-2 rounded-xl text-stone-700 hover:bg-amber-50">Worksheets</a>
+      </div>
+    </nav>
+  </header>
 
-  <section class="content">
-    <h2>What Comprehension Means</h2>
-    <p>Comprehension means the reader understands what the passage says. It is more than saying words correctly.</p>
-    <p>A child may know how to pronounce a word but still need help with meaning, order, main idea, and proof.</p>
+  <main id="main" class="max-w-3xl mx-auto mt-8">
+    <h1 class="text-3xl sm:text-4xl font-black text-stone-950">Reading Comprehension Practice</h1>
+    <p class="mt-3 text-lg text-stone-600">Understand the passage before answering. Reread, learn useful words, and find proof in the text.</p>
 
-    <h3>Main Idea</h3>
-    <p>What is the passage mostly about?</p>
+    <div class="mt-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-amber-100/70">
+      <h2 class="text-2xl font-black text-stone-900">What Comprehension Means</h2>
+      <div class="mt-4 space-y-4 text-lg text-stone-600 leading-relaxed">
+        <p>Comprehension means the reader understands what the passage says. It is more than saying words correctly.</p>
+        <p>A child may know how to pronounce a word but still need help with meaning, order, main idea, and proof.</p>
+      </div>
+      <div class="mt-6 space-y-4">
+        <div class="bg-amber-50 rounded-2xl p-4 border border-amber-100">
+          <h3 class="text-lg font-bold text-stone-900">Main Idea</h3>
+          <p class="mt-1 text-stone-600">What is the passage mostly about?</p>
+        </div>
+        <div class="bg-amber-50 rounded-2xl p-4 border border-amber-100">
+          <h3 class="text-lg font-bold text-stone-900">Details</h3>
+          <p class="mt-1 text-stone-600">What facts, times, people, places, or actions matter?</p>
+        </div>
+        <div class="bg-amber-50 rounded-2xl p-4 border border-amber-100">
+          <h3 class="text-lg font-bold text-stone-900">Proof</h3>
+          <p class="mt-1 text-stone-600">Which words in the passage prove the answer?</p>
+        </div>
+      </div>
+    </div>
 
-    <h3>Details</h3>
-    <p>What facts, times, people, places, or actions matter?</p>
+    <div class="mt-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-amber-100/70">
+      <h2 class="text-2xl font-black text-stone-900">A Simple Comprehension Routine</h2>
+      <ol class="mt-4 list-decimal pl-6 space-y-2 text-lg text-stone-600">
+        <li>Read the title and ask what the passage may be about.</li>
+        <li>Read the passage slowly one time.</li>
+        <li>Circle or say two useful words.</li>
+        <li>Answer one question from the passage.</li>
+        <li>Look back and point to the sentence that proves the answer.</li>
+        <li>Reread once to understand more.</li>
+      </ol>
+    </div>
 
-    <h3>Proof</h3>
-    <p>Which words in the passage prove the answer?</p>
-  </section>
-
-  <section class="content">
-    <h2>A Simple Comprehension Routine</h2>
-    <ol>
-      <li>Read the title and ask what the passage may be about.</li>
-      <li>Read the passage slowly one time.</li>
-      <li>Circle or say two useful words.</li>
-      <li>Answer one question from the passage.</li>
-      <li>Look back and point to the sentence that proves the answer.</li>
-      <li>Reread once to understand more.</li>
-    </ol>
-  </section>
-
-  <section class="content">
-    <h2>Practice Passage</h2>
-    <div class="passage">
-      <h3>Maria's Appointment</h3>
-      <p>Maria has a doctor's appointment on Monday at 9:00 AM. She takes the bus at 8:30 AM. Her mom asks her to bring a notebook and a pencil. At the doctor's office, Maria reads a book in the waiting room. The doctor says Maria is healthy and growing well.</p>
-      <h3>Questions</h3>
-      <ol>
+    <div class="mt-8 bg-amber-50 rounded-3xl p-6 sm:p-8 border border-amber-200">
+      <h2 class="text-2xl font-black text-stone-900">Practice Passage</h2>
+      <div class="mt-4 bg-white rounded-2xl p-6 border border-amber-100">
+        <h3 class="text-xl font-bold text-stone-900">Maria's Appointment</h3>
+        <p class="mt-3 text-lg text-stone-600 leading-relaxed">Maria has a doctor's appointment on Monday at 9:00 AM. She takes the bus at 8:30 AM. Her mom asks her to bring a notebook and a pencil. At the doctor's office, Maria reads a book in the waiting room. The doctor says Maria is healthy and growing well.</p>
+      </div>
+      <h3 class="mt-6 text-lg font-bold text-stone-900">Questions</h3>
+      <ol class="mt-3 list-decimal pl-6 space-y-2 text-lg text-stone-600">
         <li>What day is Maria's appointment?</li>
         <li>What time does Maria take the bus?</li>
         <li>What should Maria bring?</li>
         <li>What does Maria do in the waiting room?</li>
         <li>What does the doctor say about Maria?</li>
       </ol>
-      <p><strong>Proof step:</strong> Find the sentence that proves each answer.</p>
+      <p class="mt-4 text-stone-700 font-semibold">Proof step: Find the sentence that proves each answer.</p>
     </div>
-  </section>
 
-  <section class="content">
-    <h2>Practice Passage 2</h2>
-    <div class="passage">
-      <h3>The Garden</h3>
-      <p>Tom and his grandmother plant a garden in the backyard. They plant tomatoes, carrots, and green beans. Tom waters the garden every morning. After three weeks, small green leaves appear. Tom's grandmother says, "Be patient. Good things take time." By summer, they pick fresh vegetables and make a salad together.</p>
-      <h3>Questions</h3>
-      <ol>
+    <div class="mt-8 bg-amber-50 rounded-3xl p-6 sm:p-8 border border-amber-200">
+      <h2 class="text-2xl font-black text-stone-900">Practice Passage 2</h2>
+      <div class="mt-4 bg-white rounded-2xl p-6 border border-amber-100">
+        <h3 class="text-xl font-bold text-stone-900">The Garden</h3>
+        <p class="mt-3 text-lg text-stone-600 leading-relaxed">Tom and his grandmother plant a garden in the backyard. They plant tomatoes, carrots, and green beans. Tom waters the garden every morning. After three weeks, small green leaves appear. Tom's grandmother says, "Be patient. Good things take time." By summer, they pick fresh vegetables and make a salad together.</p>
+      </div>
+      <h3 class="mt-6 text-lg font-bold text-stone-900">Questions</h3>
+      <ol class="mt-3 list-decimal pl-6 space-y-2 text-lg text-stone-600">
         <li>What do Tom and his grandmother plant?</li>
         <li>Where do they plant the garden?</li>
         <li>What does Tom do every morning?</li>
@@ -120,83 +99,66 @@ footer a{color:var(--primary-light)}
         <li>What does Tom's grandmother say?</li>
         <li>What do they make by summer?</li>
       </ol>
-      <p><strong>Proof step:</strong> Find the sentence that proves each answer.</p>
+      <p class="mt-4 text-stone-700 font-semibold">Proof step: Find the sentence that proves each answer.</p>
     </div>
-  </section>
 
-  <section class="content">
-    <h2>Helpful Question Types</h2>
-    <ul>
-      <li><strong>Who?</strong> — Find the person or people in the passage.</li>
-      <li><strong>When?</strong> — Look for days, dates, times, and order words.</li>
-      <li><strong>What happened?</strong> — Find the action or event in the passage.</li>
-      <li><strong>Why?</strong> — Look for the reason something happened.</li>
-      <li><strong>Where?</strong> — Find the place in the passage.</li>
-      <li><strong>How?</strong> — Find the way something was done.</li>
-    </ul>
-  </section>
+    <div class="mt-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-amber-100/70">
+      <h2 class="text-2xl font-black text-stone-900">Helpful Question Types</h2>
+      <ul class="mt-4 list-disc pl-6 space-y-2 text-lg text-stone-600">
+        <li><strong>Who?</strong> — Find the person or people in the passage.</li>
+        <li><strong>When?</strong> — Look for days, dates, times, and order words.</li>
+        <li><strong>What happened?</strong> — Find the action or event in the passage.</li>
+        <li><strong>Why?</strong> — Look for the reason something happened.</li>
+        <li><strong>Where?</strong> — Find the place in the passage.</li>
+        <li><strong>How?</strong> — Find the way something was done.</li>
+      </ul>
+    </div>
 
-  <section class="content">
-    <h2>Words That Help Young Readers</h2>
-    <ul>
-      <li><strong>before</strong> — earlier than something else</li>
-      <li><strong>after</strong> — later than something else</li>
-      <li><strong>because</strong> — gives a reason</li>
-      <li><strong>appointment</strong> — a planned visit or meeting</li>
-      <li><strong>patient</strong> — willing to wait without getting upset</li>
-      <li><strong>appear</strong> — to show up or become visible</li>
-    </ul>
-  </section>
+    <div class="mt-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-amber-100/70">
+      <h2 class="text-2xl font-black text-stone-900">Words That Help Young Readers</h2>
+      <ul class="mt-4 list-disc pl-6 space-y-2 text-lg text-stone-600">
+        <li><strong>before</strong> — earlier than something else</li>
+        <li><strong>after</strong> — later than something else</li>
+        <li><strong>because</strong> — gives a reason</li>
+        <li><strong>appointment</strong> — a planned visit or meeting</li>
+        <li><strong>patient</strong> — willing to wait without getting upset</li>
+        <li><strong>appear</strong> — to show up or become visible</li>
+      </ul>
+    </div>
 
-  <section class="content">
-    <h2>For Parents and Tutors</h2>
-    <ul>
-      <li>Let the child use Read Aloud, whisper reading, or rereading.</li>
-      <li>Do not correct every small pronunciation mistake during comprehension practice.</li>
-      <li>Ask one question at a time.</li>
-      <li>Celebrate proof-finding. It builds real reading strength.</li>
-      <li>If the child is stuck, reread the passage together before answering.</li>
-    </ul>
-  </section>
+    <div class="mt-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-amber-100/70">
+      <h2 class="text-2xl font-black text-stone-900">For Parents and Tutors</h2>
+      <ul class="mt-4 list-disc pl-6 space-y-2 text-lg text-stone-600">
+        <li>Let the child use Read Aloud, whisper reading, or rereading.</li>
+        <li>Do not correct every small pronunciation mistake during comprehension practice.</li>
+        <li>Ask one question at a time.</li>
+        <li>Celebrate proof-finding. It builds real reading strength.</li>
+        <li>If the child is stuck, reread the passage together before answering.</li>
+      </ul>
+    </div>
 
-  <section class="content">
-    <h2>More Reading Help</h2>
-    <ul>
-      <li>⭐ Reading practice overview</li>
-      <li>⭐ Everyday reading practice</li>
-      <li>⭐ General reading comprehension practice</li>
-      <li>⭐ Printable reading worksheets</li>
-      <li>⭐ Daily 30-minute reading practice plan</li>
-    </ul>
-  </section>
+    <div class="mt-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-amber-100/70">
+      <h2 class="text-2xl font-black text-stone-900">More Reading Help</h2>
+      <ul class="mt-4 list-disc pl-6 space-y-2 text-lg text-stone-600">
+        <li>Reading practice overview</li>
+        <li>Everyday reading practice</li>
+        <li>General reading comprehension practice</li>
+        <li>Printable reading worksheets</li>
+        <li>Daily 30-minute reading practice plan</li>
+      </ul>
+    </div>
 
-  <section class="cta-section">
-    <h2>Start With One Short Passage</h2>
-    <p>Read slowly, answer from the text, and find proof before moving on.</p>
-    <a href="/app.html" class="cta">Open Lesson App</a>
-    <a href="/printable-reading-worksheets.html" class="cta-secondary">Print Worksheets</a>
-  </section>
-</main>
+    <div class="mt-8 text-center">
+      <a href="/app-240.html" class="inline-block px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-2xl text-lg shadow-md">Open Lesson App →</a>
+      <a href="/printable-reading-worksheets.html" class="inline-block px-8 py-4 bg-white border border-amber-200 hover:bg-amber-50 text-amber-700 font-bold rounded-2xl text-lg shadow-sm ml-3">Print Worksheets</a>
+    </div>
+  </main>
 
-<footer>
-  <div class="footer-links">
-    <a href="/">Home</a>
-    <a href="/app.html">Lesson App</a>
-    <a href="/daily-reading-practice.html">Daily Practice</a>
-    <a href="/calm-reading-practice.html">Calm Reading</a>
-    <a href="/reading-comprehension-practice.html">Comprehension</a>
-    <a href="/reading-levels-beginner-to-8th-grade.html">Reading Levels</a>
-    <a href="/printable-reading-worksheets.html">Worksheets</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
-    <a href="/sitemap.xml">Sitemap</a>
-  </div>
-  <p>ReadEasy30 is free reading practice for learners who need calm, steady support.</p>
-  <p>© 2026 ReadEasy30</p>
-</footer>
-<script src="/audio-fix.js?v=83c3fd4e" defer></script>
-<script src="/bubbles.js?v=1cfea431" defer></script>
+  <footer class="max-w-3xl mx-auto mt-10 pb-8 text-center text-sm text-stone-500">
+    <p>ReadEasy30 is free reading practice for learners who need calm, steady support.</p>
+    <p class="mt-1">© 2026 ReadEasy30. 100% Free. Made with 💛 for every reader.</p>
+  </footer>
+  <script src="/js/bubbles.js?v=20260920"></script>
+  <script src="/js/music.js?v=20260920"></script>
 </body>
 </html>
